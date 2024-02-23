@@ -14,6 +14,7 @@ public class BoardService {
     }
 
     public Long create(Board board) {
+        boardRepository.save(board);
         return board.getId();
     };
 
