@@ -13,7 +13,7 @@ public class Board extends BaseEntity {
     private String title;
     private String description;
     private String password;
-    private Long post_id;
+    private Long postId;
 
 //    @OneToMany
 //    private Post post;
