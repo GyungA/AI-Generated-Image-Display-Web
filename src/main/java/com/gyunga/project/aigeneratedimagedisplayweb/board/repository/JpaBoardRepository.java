@@ -2,22 +2,16 @@ package com.gyunga.project.aigeneratedimagedisplayweb.board.repository;
 
 import com.gyunga.project.aigeneratedimagedisplayweb.board.entity.Board;
 import jakarta.persistence.EntityManager;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class JpaBoardRepository implements BoardRepository {
-    private final EntityManager em;
-
-    public JpaBoardRepository(EntityManager em) {
-        this.em = em;
-    }
+public interface JpaBoardRepository extends BoardRepository, JpaRepository<Board, Long> {
 
     @Override
-    public void save(Board board) {
-        em.persist(board);
-    };
-    @Override
-    public void findById() {};
-    @Override
-    public void findAll() {};
+    public Board save(Board board);
+//    @Override
+//    public void findById() {};
+//    @Override
+//    public void findAll() {};
 }
